@@ -24,11 +24,19 @@
       "inputs" : [
         {
           "kind" : "file",
+          "name" : "/Users/augmentedmode/Desktop/side-projects/MacMetrics/AnimatedChartView.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/augmentedmode/Desktop/side-projects/MacMetrics/ChartView.swift"
         },
         {
           "kind" : "file",
           "name" : "/Users/augmentedmode/Desktop/side-projects/MacMetrics/ContentView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/augmentedmode/Desktop/side-projects/MacMetrics/DesignComponents.swift"
         },
         {
           "kind" : "file",
@@ -44,7 +52,27 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/augmentedmode/Desktop/side-projects/MacMetrics/NetworkSpeedService.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/augmentedmode/Desktop/side-projects/MacMetrics/SpeedTestComponents.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/augmentedmode/Desktop/side-projects/MacMetrics/SpeedTestView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/augmentedmode/Desktop/side-projects/MacMetrics/StatusBarView.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/augmentedmode/Desktop/side-projects/MacMetrics/SystemMonitor.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/augmentedmode/Desktop/side-projects/MacMetrics/Theme.swift"
         },
         {
           "kind" : "file",
@@ -63,12 +91,19 @@
       "moduleName" : "MacMetrics",
       "moduleOutputPath" : "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/Modules/MacMetrics.swiftmodule",
       "objects" : [
+        "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/AnimatedChartView.swift.o",
         "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/ChartView.swift.o",
         "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/ContentView.swift.o",
+        "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/DesignComponents.swift.o",
         "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/MacMetricsApp.swift.o",
         "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/MetricCardView.swift.o",
         "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/MetricGaugeView.swift.o",
+        "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/NetworkSpeedService.swift.o",
+        "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/SpeedTestComponents.swift.o",
+        "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/SpeedTestView.swift.o",
+        "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/StatusBarView.swift.o",
         "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/SystemMonitor.swift.o",
+        "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/Theme.swift.o",
         "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/Utilities.swift.o"
       ],
       "otherArguments" : [
@@ -118,11 +153,19 @@
       "outputs" : [
         {
           "kind" : "file",
+          "name" : "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/AnimatedChartView.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/ChartView.swift.o"
         },
         {
           "kind" : "file",
           "name" : "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/ContentView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/DesignComponents.swift.o"
         },
         {
           "kind" : "file",
@@ -138,7 +181,27 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/NetworkSpeedService.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/SpeedTestComponents.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/SpeedTestView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/StatusBarView.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/SystemMonitor.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/Theme.swift.o"
         },
         {
           "kind" : "file",
@@ -151,12 +214,19 @@
       ],
       "prepareForIndexing" : false,
       "sources" : [
+        "/Users/augmentedmode/Desktop/side-projects/MacMetrics/AnimatedChartView.swift",
         "/Users/augmentedmode/Desktop/side-projects/MacMetrics/ChartView.swift",
         "/Users/augmentedmode/Desktop/side-projects/MacMetrics/ContentView.swift",
+        "/Users/augmentedmode/Desktop/side-projects/MacMetrics/DesignComponents.swift",
         "/Users/augmentedmode/Desktop/side-projects/MacMetrics/MacMetricsApp.swift",
         "/Users/augmentedmode/Desktop/side-projects/MacMetrics/MetricCardView.swift",
         "/Users/augmentedmode/Desktop/side-projects/MacMetrics/MetricGaugeView.swift",
+        "/Users/augmentedmode/Desktop/side-projects/MacMetrics/NetworkSpeedService.swift",
+        "/Users/augmentedmode/Desktop/side-projects/MacMetrics/SpeedTestComponents.swift",
+        "/Users/augmentedmode/Desktop/side-projects/MacMetrics/SpeedTestView.swift",
+        "/Users/augmentedmode/Desktop/side-projects/MacMetrics/StatusBarView.swift",
         "/Users/augmentedmode/Desktop/side-projects/MacMetrics/SystemMonitor.swift",
+        "/Users/augmentedmode/Desktop/side-projects/MacMetrics/Theme.swift",
         "/Users/augmentedmode/Desktop/side-projects/MacMetrics/Utilities.swift"
       ],
       "tempsPath" : "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build",
@@ -173,12 +243,19 @@
       "MacMetrics",
       "-incremental",
       "-c",
+      "/Users/augmentedmode/Desktop/side-projects/MacMetrics/AnimatedChartView.swift",
       "/Users/augmentedmode/Desktop/side-projects/MacMetrics/ChartView.swift",
       "/Users/augmentedmode/Desktop/side-projects/MacMetrics/ContentView.swift",
+      "/Users/augmentedmode/Desktop/side-projects/MacMetrics/DesignComponents.swift",
       "/Users/augmentedmode/Desktop/side-projects/MacMetrics/MacMetricsApp.swift",
       "/Users/augmentedmode/Desktop/side-projects/MacMetrics/MetricCardView.swift",
       "/Users/augmentedmode/Desktop/side-projects/MacMetrics/MetricGaugeView.swift",
+      "/Users/augmentedmode/Desktop/side-projects/MacMetrics/NetworkSpeedService.swift",
+      "/Users/augmentedmode/Desktop/side-projects/MacMetrics/SpeedTestComponents.swift",
+      "/Users/augmentedmode/Desktop/side-projects/MacMetrics/SpeedTestView.swift",
+      "/Users/augmentedmode/Desktop/side-projects/MacMetrics/StatusBarView.swift",
       "/Users/augmentedmode/Desktop/side-projects/MacMetrics/SystemMonitor.swift",
+      "/Users/augmentedmode/Desktop/side-projects/MacMetrics/Theme.swift",
       "/Users/augmentedmode/Desktop/side-projects/MacMetrics/Utilities.swift",
       "-I",
       "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/Modules",
@@ -262,11 +339,19 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/augmentedmode/Desktop/side-projects/MacMetrics/AnimatedChartView.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/augmentedmode/Desktop/side-projects/MacMetrics/ChartView.swift"
         },
         {
           "kind" : "file",
           "name" : "/Users/augmentedmode/Desktop/side-projects/MacMetrics/ContentView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/augmentedmode/Desktop/side-projects/MacMetrics/DesignComponents.swift"
         },
         {
           "kind" : "file",
@@ -282,7 +367,27 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/augmentedmode/Desktop/side-projects/MacMetrics/NetworkSpeedService.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/augmentedmode/Desktop/side-projects/MacMetrics/SpeedTestComponents.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/augmentedmode/Desktop/side-projects/MacMetrics/SpeedTestView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/augmentedmode/Desktop/side-projects/MacMetrics/StatusBarView.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/augmentedmode/Desktop/side-projects/MacMetrics/SystemMonitor.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/augmentedmode/Desktop/side-projects/MacMetrics/Theme.swift"
         },
         {
           "kind" : "file",
@@ -300,11 +405,19 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/AnimatedChartView.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/ChartView.swift.o"
         },
         {
           "kind" : "file",
           "name" : "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/ContentView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/DesignComponents.swift.o"
         },
         {
           "kind" : "file",
@@ -320,7 +433,27 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/NetworkSpeedService.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/SpeedTestComponents.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/SpeedTestView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/StatusBarView.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/SystemMonitor.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/Theme.swift.o"
         },
         {
           "kind" : "file",

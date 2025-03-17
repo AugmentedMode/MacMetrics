@@ -1,7 +1,14 @@
+/Users/augmentedmode/Desktop/side-projects/MacMetrics/AnimatedChartView.swift
 /Users/augmentedmode/Desktop/side-projects/MacMetrics/ChartView.swift
 /Users/augmentedmode/Desktop/side-projects/MacMetrics/ContentView.swift
+/Users/augmentedmode/Desktop/side-projects/MacMetrics/DesignComponents.swift
 /Users/augmentedmode/Desktop/side-projects/MacMetrics/MacMetricsApp.swift
 /Users/augmentedmode/Desktop/side-projects/MacMetrics/MetricCardView.swift
 /Users/augmentedmode/Desktop/side-projects/MacMetrics/MetricGaugeView.swift
+/Users/augmentedmode/Desktop/side-projects/MacMetrics/NetworkSpeedService.swift
+/Users/augmentedmode/Desktop/side-projects/MacMetrics/SpeedTestComponents.swift
+/Users/augmentedmode/Desktop/side-projects/MacMetrics/SpeedTestView.swift
+/Users/augmentedmode/Desktop/side-projects/MacMetrics/StatusBarView.swift
 /Users/augmentedmode/Desktop/side-projects/MacMetrics/SystemMonitor.swift
+/Users/augmentedmode/Desktop/side-projects/MacMetrics/Theme.swift
 /Users/augmentedmode/Desktop/side-projects/MacMetrics/Utilities.swift

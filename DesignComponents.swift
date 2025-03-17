@@ -96,29 +96,36 @@ struct MetricCard: View {
 }
 
 // A custom tab button with animation
-struct CustomTabButton: View {
+struct DesignTabButton: View {
     let title: String
     let isSelected: Bool
     let action: () -> Void
     
+    @State private var isHovering = false
+    
     var body: some View {
         Button(action: action) {
-            VStack(spacing: 8) {
+            VStack(spacing: 4) {
                 Text(title)
-                    .font(.system(size: 13, weight: isSelected ? .semibold : .medium))
-                    .foregroundColor(isSelected ? Color(.labelColor) : Color.secondary)
-                
-                // Indicator line
-                Rectangle()
-                    .fill(isSelected ? Color.accentColor : Color.clear)
-                    .frame(height: 2)
-                    .clipShape(RoundedRectangle(cornerRadius: 1))
+                    .font(.system(size: 14, weight: isSelected ? .semibold : .regular))
+                    .foregroundColor(isSelected ? .primary : .secondary)
             }
-            .padding(.horizontal, 12)
-            .padding(.vertical, 8)
-            .contentShape(Rectangle())
+            .frame(width: 100, height: 36)
+            .background(
+                RoundedRectangle(cornerRadius: 8)
+                    .fill(isSelected ? Color.blue.opacity(0.1) : Color.clear)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 8)
+                            .stroke(isSelected ? Color.blue.opacity(0.2) : Color.clear, lineWidth: 1)
+                    )
+            )
+            .scaleEffect(isHovering ? 1.05 : 1.0)
+            .animation(.spring(), value: isHovering)
         }
         .buttonStyle(PlainButtonStyle())
+        .onHover { hovering in
+            isHovering = hovering
+        }
     }
 }
 

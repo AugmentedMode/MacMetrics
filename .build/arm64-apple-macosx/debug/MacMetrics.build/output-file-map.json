@@ -2,6 +2,12 @@
   "": {
     "swift-dependencies": "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/master.swiftdeps"
   },
+  "/Users/augmentedmode/Desktop/side-projects/MacMetrics/AnimatedChartView.swift": {
+    "dependencies": "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/AnimatedChartView.d",
+    "object": "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/AnimatedChartView.swift.o",
+    "swiftmodule": "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/AnimatedChartView~partial.swiftmodule",
+    "swift-dependencies": "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/AnimatedChartView.swiftdeps"
+  },
   "/Users/augmentedmode/Desktop/side-projects/MacMetrics/ChartView.swift": {
     "dependencies": "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/ChartView.d",
     "object": "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/ChartView.swift.o",
@@ -13,6 +19,12 @@
     "object": "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/ContentView.swift.o",
     "swiftmodule": "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/ContentView~partial.swiftmodule",
     "swift-dependencies": "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/ContentView.swiftdeps"
+  },
+  "/Users/augmentedmode/Desktop/side-projects/MacMetrics/DesignComponents.swift": {
+    "dependencies": "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/DesignComponents.d",
+    "object": "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/DesignComponents.swift.o",
+    "swiftmodule": "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/DesignComponents~partial.swiftmodule",
+    "swift-dependencies": "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/DesignComponents.swiftdeps"
   },
   "/Users/augmentedmode/Desktop/side-projects/MacMetrics/MacMetricsApp.swift": {
     "dependencies": "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/MacMetricsApp.d",
@@ -32,11 +44,41 @@
     "swiftmodule": "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/MetricGaugeView~partial.swiftmodule",
     "swift-dependencies": "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/MetricGaugeView.swiftdeps"
   },
+  "/Users/augmentedmode/Desktop/side-projects/MacMetrics/NetworkSpeedService.swift": {
+    "dependencies": "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/NetworkSpeedService.d",
+    "object": "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/NetworkSpeedService.swift.o",
+    "swiftmodule": "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/NetworkSpeedService~partial.swiftmodule",
+    "swift-dependencies": "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/NetworkSpeedService.swiftdeps"
+  },
+  "/Users/augmentedmode/Desktop/side-projects/MacMetrics/SpeedTestComponents.swift": {
+    "dependencies": "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/SpeedTestComponents.d",
+    "object": "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/SpeedTestComponents.swift.o",
+    "swiftmodule": "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/SpeedTestComponents~partial.swiftmodule",
+    "swift-dependencies": "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/SpeedTestComponents.swiftdeps"
+  },
+  "/Users/augmentedmode/Desktop/side-projects/MacMetrics/SpeedTestView.swift": {
+    "dependencies": "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/SpeedTestView.d",
+    "object": "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/SpeedTestView.swift.o",
+    "swiftmodule": "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/SpeedTestView~partial.swiftmodule",
+    "swift-dependencies": "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/SpeedTestView.swiftdeps"
+  },
+  "/Users/augmentedmode/Desktop/side-projects/MacMetrics/StatusBarView.swift": {
+    "dependencies": "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/StatusBarView.d",
+    "object": "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/StatusBarView.swift.o",
+    "swiftmodule": "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/StatusBarView~partial.swiftmodule",
+    "swift-dependencies": "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/StatusBarView.swiftdeps"
+  },
   "/Users/augmentedmode/Desktop/side-projects/MacMetrics/SystemMonitor.swift": {
     "dependencies": "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/SystemMonitor.d",
     "object": "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/SystemMonitor.swift.o",
     "swiftmodule": "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/SystemMonitor~partial.swiftmodule",
     "swift-dependencies": "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/SystemMonitor.swiftdeps"
+  },
+  "/Users/augmentedmode/Desktop/side-projects/MacMetrics/Theme.swift": {
+    "dependencies": "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/Theme.d",
+    "object": "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/Theme.swift.o",
+    "swiftmodule": "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/Theme~partial.swiftmodule",
+    "swift-dependencies": "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/Theme.swiftdeps"
   },
   "/Users/augmentedmode/Desktop/side-projects/MacMetrics/Utilities.swift": {
     "dependencies": "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/Utilities.d",

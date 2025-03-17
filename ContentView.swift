@@ -6,6 +6,14 @@ struct ContentView: View {
     @State private var showSettings = false
     
     private let tabs = ["Overview", "CPU", "Memory", "Battery", "Network"]
+    private let tabIcons = ["gauge.medium", "cpu", "memorychip", "battery.100", "network"]
+    private let tabColors: [Color] = [
+        Color(.labelColor),
+        AppTheme.Colors.cpu,
+        AppTheme.Colors.memory,
+        AppTheme.Colors.battery,
+        AppTheme.Colors.network
+    ]
     
     init(systemMonitor: SystemMonitor) {
         self.systemMonitor = systemMonitor
@@ -90,8 +98,10 @@ struct ContentView: View {
     private var tabBarView: some View {
         HStack(spacing: 0) {
             ForEach(0..<tabs.count, id: \.self) { index in
-                CustomTabButton(
+                TabButton(
                     title: tabs[index],
+                    icon: tabIcons[index],
+                    color: tabColors[index],
                     isSelected: selectedTab == index,
                     action: { selectedTab = index }
                 )
@@ -610,168 +620,75 @@ struct ContentView: View {
     // Network Tab
     private var networkTabView: some View {
         VStack(spacing: 20) {
-            // Network Usage Card
+            SpeedTestView()
+                .frame(height: 450)
+                
+            // Network bandwidth monitoring
             MetricCard(
-                title: "Network Usage",
+                title: "Real-Time Network Activity",
                 icon: "network",
                 content: AnyView(
-                    VStack(spacing: 20) {
-                        // Network gauges
-                        HStack(spacing: 40) {
-                            // Upload
-                            VStack {
-                                Text("Upload")
-                                    .font(.headline)
-                                    .foregroundColor(.secondary)
-                                
-                                ZStack {
-                                    Circle()
-                                        .stroke(Color.blue.opacity(0.2), lineWidth: 10)
-                                        .frame(width: 100, height: 100)
-                                    
-                                    Circle()
-                                        .trim(from: 0, to: 0.35)
-                                        .stroke(Color.blue, lineWidth: 10)
-                                        .frame(width: 100, height: 100)
-                                        .rotationEffect(.degrees(-90))
-                                    
-                                    VStack {
-                                        Text("1.2")
-                                            .font(.system(size: 24, weight: .bold, design: .rounded))
-                                        
-                                        Text("MB/s")
-                                            .font(.caption)
-                                            .foregroundColor(.secondary)
-                                    }
-                                }
-                            }
-                            
-                            // Download
-                            VStack {
-                                Text("Download")
-                                    .font(.headline)
-                                    .foregroundColor(.secondary)
-                                
-                                ZStack {
-                                    Circle()
-                                        .stroke(Color.purple.opacity(0.2), lineWidth: 10)
-                                        .frame(width: 100, height: 100)
-                                    
-                                    Circle()
-                                        .trim(from: 0, to: 0.65)
-                                        .stroke(Color.purple, lineWidth: 10)
-                                        .frame(width: 100, height: 100)
-                                        .rotationEffect(.degrees(-90))
-                                    
-                                    VStack {
-                                        Text("5.8")
-                                            .font(.system(size: 24, weight: .bold, design: .rounded))
-                                        
-                                        Text("MB/s")
-                                            .font(.caption)
-                                            .foregroundColor(.secondary)
-                                    }
-                                }
-                            }
-                        }
-                        .padding(.vertical, 10)
-                        
-                        // Network History Chart
-                        AnimatedChartView(
-                            values: systemMonitor.cpuHistory.map { $0 * 0.7 }, // Using CPU history as a placeholder
-                            color: .blue,
-                            height: 100,
-                            showLabels: true,
-                            title: "Network History"
-                        )
-                    }
-                ),
-                color: .blue
-            )
-            
-            // Network Details Card
-            MetricCard(
-                title: "Network Details",
-                icon: "wifi",
-                content: AnyView(
                     VStack(spacing: 16) {
-                        DetailRow(
-                            title: "Interface",
-                            value: "Wi-Fi (en0)",
-                            icon: "wifi",
-                            color: .blue
-                        )
-                        
-                        DetailRow(
-                            title: "IP Address",
-                            value: "192.168.1.10",
-                            icon: "network",
-                            color: .green
-                        )
-                        
-                        DetailRow(
-                            title: "MAC Address",
-                            value: "XX:XX:XX:XX:XX:XX",
-                            icon: "lock.shield",
-                            color: .orange
-                        )
+                        HStack(spacing: 24) {
+                            // Download rate
+                            VStack(alignment: .center, spacing: 4) {
+                                Image(systemName: "arrow.down.circle.fill")
+                                    .foregroundColor(AppTheme.Colors.network)
+                                    .font(.system(size: 24))
+                                
+                                Text("Download")
+                                    .font(.system(size: 12, weight: .medium))
+                                    .foregroundColor(.secondary)
+                                
+                                HStack(alignment: .firstTextBaseline, spacing: 2) {
+                                    Text("\(systemMonitor.downloadRate.formatBandwidth())")
+                                        .font(.system(size: 22, weight: .bold, design: .rounded))
+                                        .foregroundColor(AppTheme.Colors.network)
+                                    
+                                    Text("/s")
+                                        .font(.system(size: 14))
+                                        .foregroundColor(.secondary)
+                                }
+                            }
+                            .frame(maxWidth: .infinity)
+                            
+                            // Upload rate
+                            VStack(alignment: .center, spacing: 4) {
+                                Image(systemName: "arrow.up.circle.fill")
+                                    .foregroundColor(AppTheme.Colors.network.opacity(0.8))
+                                    .font(.system(size: 24))
+                                
+                                Text("Upload")
+                                    .font(.system(size: 12, weight: .medium))
+                                    .foregroundColor(.secondary)
+                                
+                                HStack(alignment: .firstTextBaseline, spacing: 2) {
+                                    Text("\(systemMonitor.uploadRate.formatBandwidth())")
+                                        .font(.system(size: 22, weight: .bold, design: .rounded))
+                                        .foregroundColor(AppTheme.Colors.network.opacity(0.8))
+                                    
+                                    Text("/s")
+                                        .font(.system(size: 14))
+                                        .foregroundColor(.secondary)
+                                }
+                            }
+                            .frame(maxWidth: .infinity)
+                        }
+                        .padding(.vertical, 8)
                         
                         Divider()
                         
-                        HStack {
-                            Text("Data Usage")
-                                .font(.headline)
-                                .padding(.bottom, 8)
-                            
-                            Spacer()
-                        }
-                        
-                        VStack(spacing: 8) {
-                            HStack {
-                                Text("Today")
-                                    .foregroundColor(.secondary)
-                                
-                                Spacer()
-                                
-                                Text(systemMonitor.networkUsageToday.formatBytes())
-                                    .fontWeight(.semibold)
-                            }
-                            
-                            AnimatedProgressView(
-                                value: Double(systemMonitor.networkUsageToday) / Double(systemMonitor.networkUsageWeek) * 100,
-                                color: .blue
-                            )
-                            
-                            HStack {
-                                Text("This Week")
-                                    .foregroundColor(.secondary)
-                                
-                                Spacer()
-                                
-                                Text(systemMonitor.networkUsageWeek.formatBytes())
-                                    .fontWeight(.semibold)
-                            }
-                            
-                            AnimatedProgressView(
-                                value: Double(systemMonitor.networkUsageWeek) / Double(systemMonitor.networkUsageMonth) * 100,
-                                color: .blue
-                            )
-                            
-                            HStack {
-                                Text("This Month")
-                                    .foregroundColor(.secondary)
-                                
-                                Spacer()
-                                
-                                Text(systemMonitor.networkUsageMonth.formatBytes())
-                                    .fontWeight(.semibold)
-                            }
-                            
-                            AnimatedProgressView(value: 40, color: .blue)
-                        }
+                        // Network traffic chart
+                        AnimatedChartView(
+                            values: systemMonitor.networkHistory,
+                            color: AppTheme.Colors.network,
+                            height: 80,
+                            showLabels: true,
+                            title: "Network Traffic"
+                        )
                     }
                 ),
-                color: .blue
+                color: AppTheme.Colors.network
             )
         }
     }
@@ -921,64 +838,693 @@ struct SettingsView: View {
     @State private var updateFrequency = 2.0
     @State private var startAtLogin = true
     @State private var showInDock = false
+    @State private var selectedSection = 0
+    @State private var showResetConfirmation = false
+    @State private var appearAnimation = false
+    
+    private let sections = ["General", "Performance", "Display", "About"]
     
     var body: some View {
         VStack(spacing: 0) {
-            // Header
-            HStack {
-                Text("Settings")
-                    .font(.headline)
+            // Header with gradient
+            ZStack(alignment: .bottom) {
+                LinearGradient(
+                    gradient: Gradient(colors: [
+                        AppTheme.Colors.background,
+                        AppTheme.Colors.background.opacity(0.9)
+                    ]),
+                    startPoint: .top,
+                    endPoint: .bottom
+                )
+                
+                VStack(spacing: 8) {
+                    HStack {
+                        Text("Settings")
+                            .font(AppTheme.Typography.headline)
+                            .foregroundColor(AppTheme.Colors.textPrimary)
+                        
+                        Spacer()
+                        
+                        Button(action: {
+                            presentationMode.wrappedValue.dismiss()
+                        }) {
+                            Image(systemName: "xmark.circle.fill")
+                                .font(.system(size: 22))
+                                .foregroundColor(AppTheme.Colors.textSecondary)
+                                .opacity(0.7)
+                        }
+                        .buttonStyle(PlainButtonStyle())
+                    }
+                    .padding(.horizontal)
+                    .padding(.top, 16)
+                    
+                    // Section tabs
+                    HStack(spacing: 0) {
+                        ForEach(0..<sections.count, id: \.self) { index in
+                            Button(action: {
+                                withAnimation(.spring()) {
+                                    selectedSection = index
+                                }
+                            }) {
+                                VStack(spacing: 8) {
+                                    Text(sections[index])
+                                        .font(AppTheme.Typography.smallBold)
+                                        .foregroundColor(selectedSection == index ? 
+                                            AppTheme.Colors.primary : 
+                                            AppTheme.Colors.textSecondary)
+                                        .padding(.horizontal, 12)
+                                        .padding(.vertical, 8)
+                                    
+                                    Rectangle()
+                                        .fill(selectedSection == index ? 
+                                            AppTheme.Colors.primary : 
+                                            Color.clear)
+                                        .frame(height: 2)
+                                        .padding(.horizontal, 2)
+                                }
+                            }
+                            .buttonStyle(PlainButtonStyle())
+                            .frame(maxWidth: .infinity)
+                        }
+                    }
+                }
+            }
+            .frame(height: 90)
+            
+            // Content
+            ZStack {
+                // Background - use Color.secondary instead of Color(AppTheme.Colors.card)
+                Color.secondary
+                    .opacity(0.1)
+                
+                // Settings content
+                ScrollView {
+                    VStack(spacing: 20) {
+                        switch selectedSection {
+                        case 0: generalSection
+                        case 1: performanceSection
+                        case 2: displaySection
+                        case 3: aboutSection
+                        default: EmptyView()
+                        }
+                    }
+                    .padding()
+                    .opacity(appearAnimation ? 1 : 0)
+                    .offset(y: appearAnimation ? 0 : 10)
+                    .animation(.easeOut(duration: 0.3).delay(0.1), value: appearAnimation)
+                    .animation(.easeOut(duration: 0.3), value: selectedSection)
+                }
+            }
+        }
+        .frame(width: 420, height: 500)
+        .background(AppTheme.Colors.background)
+        .cornerRadius(16)
+        .overlay(
+            RoundedRectangle(cornerRadius: 16)
+                .stroke(AppTheme.Colors.divider, lineWidth: 1)
+        )
+        .shadow(color: Color.black.opacity(0.2), radius: 20, x: 0, y: 10)
+        .onAppear {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                withAnimation {
+                    appearAnimation = true
+                }
+            }
+        }
+        .alert(isPresented: $showResetConfirmation) {
+            Alert(
+                title: Text("Reset Settings"),
+                message: Text("Are you sure you want to reset all settings to default?"),
+                primaryButton: .destructive(Text("Reset")) {
+                    resetSettings()
+                },
+                secondaryButton: .cancel()
+            )
+        }
+    }
+    
+    // MARK: - Settings Sections
+    
+    private var generalSection: some View {
+        VStack(spacing: 20) {
+            settingsSectionTitle("General Settings")
+            
+            VStack(spacing: 0) {
+                settingsToggle(
+                    title: "Start at login",
+                    description: "Automatically open MacMetrics when you log in",
+                    icon: "power",
+                    iconColor: AppTheme.Colors.primary,
+                    isOn: $startAtLogin
+                )
+                
+                Divider()
+                    .padding(.leading, 56)
+                
+                settingsToggle(
+                    title: "Show in Dock",
+                    description: "Display MacMetrics icon in the Dock",
+                    icon: "dock.rectangle",
+                    iconColor: AppTheme.Colors.secondary,
+                    isOn: $showInDock
+                )
+            }
+            .background(
+                RoundedRectangle(cornerRadius: 12)
+                    .fill(AppTheme.Colors.card)
+            )
+            .overlay(
+                RoundedRectangle(cornerRadius: 12)
+                    .stroke(AppTheme.Colors.divider, lineWidth: 1)
+            )
+        }
+    }
+    
+    private var performanceSection: some View {
+        VStack(spacing: 20) {
+            settingsSectionTitle("Performance Settings")
+            
+            VStack(spacing: 16) {
+                settingsSlider(
+                    title: "Update Frequency",
+                    description: "How often metrics are refreshed (seconds)",
+                    icon: "timer",
+                    iconColor: AppTheme.Colors.cpu,
+                    value: $updateFrequency,
+                    range: 0.5...5.0,
+                    step: 0.5,
+                    valueDisplay: "\(String(format: "%.1f", updateFrequency))s"
+                )
+                
+                Divider()
+                    .padding(.horizontal)
+                
+                Button(action: {
+                    showResetConfirmation = true
+                }) {
+                    HStack {
+                        Image(systemName: "arrow.counterclockwise.circle.fill")
+                            .font(.system(size: 20))
+                            .foregroundColor(AppTheme.Colors.danger)
+                        
+                        Text("Reset All Settings")
+                            .font(AppTheme.Typography.body)
+                            .foregroundColor(AppTheme.Colors.danger)
+                    }
+                    .padding()
+                    .frame(maxWidth: .infinity, alignment: .center)
+                    .background(
+                        RoundedRectangle(cornerRadius: 8)
+                            .fill(AppTheme.Colors.danger.opacity(0.1))
+                    )
+                }
+                .buttonStyle(PlainButtonStyle())
+                .padding(.horizontal)
+                .padding(.bottom, 8)
+            }
+            .padding(.vertical, 8)
+            .background(
+                RoundedRectangle(cornerRadius: 12)
+                    .fill(AppTheme.Colors.card)
+            )
+            .overlay(
+                RoundedRectangle(cornerRadius: 12)
+                    .stroke(AppTheme.Colors.divider, lineWidth: 1)
+            )
+        }
+    }
+    
+    private var displaySection: some View {
+        VStack(spacing: 20) {
+            settingsSectionTitle("Display Settings")
+            
+            VStack(spacing: 0) {
+                settingsToggle(
+                    title: "Dark Mode",
+                    description: "Use dark appearance",
+                    icon: "moon.fill",
+                    iconColor: AppTheme.Colors.network,
+                    isOn: .constant(true)
+                )
+                
+                Divider()
+                    .padding(.leading, 56)
+                
+                settingsToggle(
+                    title: "Compact Layout",
+                    description: "Use a more compact UI for small screens",
+                    icon: "rectangle.compress.vertical",
+                    iconColor: AppTheme.Colors.memory,
+                    isOn: .constant(false)
+                )
+                
+                Divider()
+                    .padding(.leading, 56)
+                
+                settingsToggle(
+                    title: "Show Animations",
+                    description: "Enable UI animations throughout the app",
+                    icon: "waveform",
+                    iconColor: AppTheme.Colors.battery,
+                    isOn: .constant(true)
+                )
+            }
+            .background(
+                RoundedRectangle(cornerRadius: 12)
+                    .fill(AppTheme.Colors.card)
+            )
+            .overlay(
+                RoundedRectangle(cornerRadius: 12)
+                    .stroke(AppTheme.Colors.divider, lineWidth: 1)
+            )
+            
+            VStack(spacing: 16) {
+                Text("Theme Color")
+                    .font(AppTheme.Typography.bodyBold)
+                    .foregroundColor(AppTheme.Colors.textPrimary)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.horizontal)
+                    .padding(.top, 12)
+                
+                // Color theme picker
+                HStack(spacing: 12) {
+                    ForEach([
+                        AppTheme.Colors.primary,
+                        AppTheme.Colors.secondary,
+                        AppTheme.Colors.cpu,
+                        AppTheme.Colors.memory,
+                        AppTheme.Colors.network
+                    ], id: \.self) { color in
+                        Button(action: {}) {
+                            Circle()
+                                .fill(color)
+                                .frame(width: 28, height: 28)
+                                .overlay(
+                                    Circle()
+                                        .stroke(Color.white.opacity(0.5), lineWidth: 2)
+                                        .opacity(color == AppTheme.Colors.primary ? 1 : 0)
+                                )
+                        }
+                        .buttonStyle(PlainButtonStyle())
+                    }
+                }
+                .padding(.horizontal)
+                .padding(.bottom, 12)
+            }
+            .background(
+                RoundedRectangle(cornerRadius: 12)
+                    .fill(AppTheme.Colors.card)
+            )
+            .overlay(
+                RoundedRectangle(cornerRadius: 12)
+                    .stroke(AppTheme.Colors.divider, lineWidth: 1)
+            )
+        }
+    }
+    
+    private var aboutSection: some View {
+        VStack(spacing: 20) {
+            settingsSectionTitle("About MacMetrics")
+            
+            VStack(spacing: 16) {
+                // App icon and info
+                VStack(spacing: 8) {
+                    Image(systemName: "speedometer")
+                        .font(.system(size: 48))
+                        .foregroundColor(AppTheme.Colors.primary)
+                    
+                    Text("MacMetrics")
+                        .font(AppTheme.Typography.largeTitle)
+                        .foregroundColor(AppTheme.Colors.textPrimary)
+                    
+                    Text("Version 1.0.0")
+                        .font(AppTheme.Typography.body)
+                        .foregroundColor(AppTheme.Colors.textSecondary)
+                }
+                .padding()
+                
+                Divider()
+                    .padding(.horizontal)
+                
+                // System info
+                VStack(spacing: 12) {
+                    infoRow(title: "Device", value: "MacBook Pro")
+                    infoRow(title: "macOS", value: "Sonoma 14.5")
+                    infoRow(title: "Processor", value: "Apple M1 Pro")
+                    infoRow(title: "Memory", value: "16 GB")
+                }
+                .padding(.horizontal)
+                .padding(.vertical, 8)
+            }
+            .background(
+                RoundedRectangle(cornerRadius: 12)
+                    .fill(AppTheme.Colors.card)
+            )
+            .overlay(
+                RoundedRectangle(cornerRadius: 12)
+                    .stroke(AppTheme.Colors.divider, lineWidth: 1)
+            )
+            
+            // Footer with buttons
+            HStack(spacing: 16) {
+                footerButton("Website", icon: "globe", color: AppTheme.Colors.network)
+                footerButton("Support", icon: "questionmark.circle", color: AppTheme.Colors.memory)
+                footerButton("Privacy", icon: "lock.shield", color: AppTheme.Colors.battery)
+            }
+        }
+    }
+    
+    // MARK: - Helper Views
+    
+    private func settingsSectionTitle(_ title: String) -> some View {
+        Text(title)
+            .font(AppTheme.Typography.titleBold)
+            .foregroundColor(AppTheme.Colors.textPrimary)
+            .frame(maxWidth: .infinity, alignment: .leading)
+    }
+    
+    private func settingsToggle(title: String, description: String, icon: String, iconColor: Color, isOn: Binding<Bool>) -> some View {
+        HStack(spacing: 16) {
+            ZStack {
+                Circle()
+                    .fill(iconColor.opacity(0.15))
+                    .frame(width: 36, height: 36)
+                
+                Image(systemName: icon)
+                    .font(.system(size: 16))
+                    .foregroundColor(iconColor)
+            }
+            
+            VStack(alignment: .leading, spacing: 4) {
+                Text(title)
+                    .font(AppTheme.Typography.bodyBold)
+                    .foregroundColor(AppTheme.Colors.textPrimary)
+                
+                Text(description)
+                    .font(AppTheme.Typography.small)
+                    .foregroundColor(AppTheme.Colors.textSecondary)
+            }
+            
+            Spacer()
+            
+            Toggle("", isOn: isOn)
+                .labelsHidden()
+                .toggleStyle(SwitchToggleStyle(tint: iconColor))
+        }
+        .padding(.horizontal, 16)
+        .padding(.vertical, 12)
+    }
+    
+    private func settingsSlider(title: String, description: String, icon: String, iconColor: Color, value: Binding<Double>, range: ClosedRange<Double>, step: Double, valueDisplay: String) -> some View {
+        VStack(alignment: .leading, spacing: 12) {
+            HStack(spacing: 16) {
+                ZStack {
+                    Circle()
+                        .fill(iconColor.opacity(0.15))
+                        .frame(width: 36, height: 36)
+                    
+                    Image(systemName: icon)
+                        .font(.system(size: 16))
+                        .foregroundColor(iconColor)
+                }
+                
+                VStack(alignment: .leading, spacing: 4) {
+                    Text(title)
+                        .font(AppTheme.Typography.bodyBold)
+                        .foregroundColor(AppTheme.Colors.textPrimary)
+                    
+                    Text(description)
+                        .font(AppTheme.Typography.small)
+                        .foregroundColor(AppTheme.Colors.textSecondary)
+                }
                 
                 Spacer()
                 
-                Button("Done") {
-                    presentationMode.wrappedValue.dismiss()
-                }
-                .buttonStyle(PlainButtonStyle())
-                .foregroundColor(.accentColor)
+                Text(valueDisplay)
+                    .font(AppTheme.Typography.bodyBold)
+                    .foregroundColor(iconColor)
+                    .frame(width: 50, alignment: .trailing)
             }
-            .padding()
             
-            Divider()
-            
-            // Settings content
-            Form {
-                Section(header: Text("General")) {
-                    Toggle("Start at login", isOn: $startAtLogin)
-                    Toggle("Show icon in Dock", isOn: $showInDock)
-                }
-                
-                Section(header: Text("Performance")) {
-                    VStack(alignment: .leading) {
-                        Text("Update frequency: \(String(format: "%.1f", updateFrequency))s")
-                        
-                        Slider(value: $updateFrequency, in: 0.5...5.0, step: 0.5)
-                    }
-                    
-                    Button("Reset All Settings") {
-                        // Reset logic here
-                    }
-                    .foregroundColor(.red)
-                }
-                
-                Section(header: Text("About")) {
-                    HStack {
-                        Text("Version")
-                        Spacer()
-                        Text("1.0.0")
-                            .foregroundColor(.secondary)
-                    }
-                    
-                    HStack {
-                        Text("Device")
-                        Spacer()
-                        Text("MacBook Pro")
-                            .foregroundColor(.secondary)
-                    }
-                }
-            }
-            .padding()
+            // Custom slider
+            SliderView(value: value, range: range, step: step, color: iconColor)
+                .padding(.leading, 52)
         }
-        .frame(width: 350, height: 400)
+        .padding(.horizontal, 16)
+        .padding(.vertical, 4)
+    }
+    
+    private func infoRow(title: String, value: String) -> some View {
+        HStack {
+            Text(title)
+                .font(AppTheme.Typography.body)
+                .foregroundColor(AppTheme.Colors.textSecondary)
+            
+            Spacer()
+            
+            Text(value)
+                .font(AppTheme.Typography.bodyBold)
+                .foregroundColor(AppTheme.Colors.textPrimary)
+        }
+    }
+    
+    private func footerButton(_ title: String, icon: String, color: Color) -> some View {
+        Button(action: {}) {
+            VStack(spacing: 8) {
+                Image(systemName: icon)
+                    .font(.system(size: 18))
+                    .foregroundColor(color)
+                
+                Text(title)
+                    .font(AppTheme.Typography.small)
+                    .foregroundColor(AppTheme.Colors.textPrimary)
+            }
+            .padding(.horizontal, 16)
+            .padding(.vertical, 12)
+            .frame(maxWidth: .infinity)
+            .background(
+                RoundedRectangle(cornerRadius: 12)
+                    .fill(AppTheme.Colors.card)
+            )
+            .overlay(
+                RoundedRectangle(cornerRadius: 12)
+                    .stroke(AppTheme.Colors.divider, lineWidth: 1)
+            )
+        }
+        .buttonStyle(PlainButtonStyle())
+    }
+    
+    private func resetSettings() {
+        // Reset logic
+        updateFrequency = 2.0
+        startAtLogin = true
+        showInDock = false
+    }
+}
+
+// Custom slider with improved styling
+struct SliderView: View {
+    @Binding var value: Double
+    let range: ClosedRange<Double>
+    let step: Double
+    let color: Color
+    
+    @State private var isDragging = false
+    
+    var body: some View {
+        GeometryReader { geometry in
+            // Track
+            if #available(macOS 14.0, *) {
+                ZStack(alignment: .leading) {
+                    // Background track
+                    RoundedRectangle(cornerRadius: 4)
+                        .fill(Color.secondary.opacity(0.2))
+                        .frame(height: 8)
+                    
+                    // Foreground track
+                    RoundedRectangle(cornerRadius: 4)
+                        .fill(
+                            LinearGradient(
+                                gradient: Gradient(colors: [
+                                    color.opacity(0.7),
+                                    color
+                                ]),
+                                startPoint: .leading,
+                                endPoint: .trailing
+                            )
+                        )
+                        .frame(width: max(0, CGFloat(valuePosition(in: geometry.size.width))), height: 8)
+                    
+                    // Thumb
+                    Circle()
+                        .fill(Color.white)
+                        .frame(width: 20, height: 20)
+                        .shadow(color: Color.black.opacity(0.15), radius: 3, x: 0, y: 1)
+                        .offset(x: CGFloat(valuePosition(in: geometry.size.width)) - 10)
+                        .gesture(
+                            DragGesture()
+                                .onChanged { gesture in
+                                    isDragging = true
+                                    updateValue(at: gesture.location, in: geometry.size)
+                                }
+                                .onEnded { _ in
+                                    isDragging = false
+                                }
+                        )
+                        .scaleEffect(isDragging ? 1.2 : 1.0)
+                        .animation(.spring(response: 0.3, dampingFraction: 0.7), value: isDragging)
+                }
+                .frame(height: 20)
+                .contentShape(Rectangle())
+                .onTapGesture { location in
+                    // Convert tap location to correct coordinate space
+                    let xValue = min(max(0, location.x), geometry.size.width)
+                    let percent = Double(xValue / geometry.size.width)
+                    let rawValue = range.lowerBound + percent * (range.upperBound - range.lowerBound)
+                    
+                    // Round to nearest step
+                    let steps = round((rawValue - range.lowerBound) / step)
+                    value = min(range.upperBound, max(range.lowerBound, range.lowerBound + steps * step))
+                }
+            } else {
+                // Fallback on earlier versions
+            };if #available(macOS 14.0, *) {
+                ZStack(alignment: .leading) {
+                    // Background track
+                    RoundedRectangle(cornerRadius: 4)
+                        .fill(Color.secondary.opacity(0.2))
+                        .frame(height: 8)
+                    
+                    // Foreground track
+                    RoundedRectangle(cornerRadius: 4)
+                        .fill(
+                            LinearGradient(
+                                gradient: Gradient(colors: [
+                                    color.opacity(0.7),
+                                    color
+                                ]),
+                                startPoint: .leading,
+                                endPoint: .trailing
+                            )
+                        )
+                        .frame(width: max(0, CGFloat(valuePosition(in: geometry.size.width))), height: 8)
+                    
+                    // Thumb
+                    Circle()
+                        .fill(Color.white)
+                        .frame(width: 20, height: 20)
+                        .shadow(color: Color.black.opacity(0.15), radius: 3, x: 0, y: 1)
+                        .offset(x: CGFloat(valuePosition(in: geometry.size.width)) - 10)
+                        .gesture(
+                            DragGesture()
+                                .onChanged { gesture in
+                                    isDragging = true
+                                    updateValue(at: gesture.location, in: geometry.size)
+                                }
+                                .onEnded { _ in
+                                    isDragging = false
+                                }
+                        )
+                        .scaleEffect(isDragging ? 1.2 : 1.0)
+                        .animation(.spring(response: 0.3, dampingFraction: 0.7), value: isDragging)
+                }
+                .frame(height: 20)
+                .contentShape(Rectangle())
+                .onTapGesture { location in
+                    // Convert tap location to correct coordinate space
+                    let xValue = min(max(0, location.x), geometry.size.width)
+                    let percent = Double(xValue / geometry.size.width)
+                    let rawValue = range.lowerBound + percent * (range.upperBound - range.lowerBound)
+                    
+                    // Round to nearest step
+                    let steps = round((rawValue - range.lowerBound) / step)
+                    value = min(range.upperBound, max(range.lowerBound, range.lowerBound + steps * step))
+                }
+            } else {
+                // Fallback on earlier versions
+            }
+        }
+        .frame(height: 20)
+        .padding(.trailing, 10)
+    }
+    
+    private func valuePosition(in width: CGFloat) -> Double {
+        let percent = (value - range.lowerBound) / (range.upperBound - range.lowerBound)
+        return Double(width) * percent
+    }
+    
+    private func updateValue(at point: CGPoint, in size: CGSize) {
+        let width = size.width
+        let percent = max(0, min(1, Double(point.x / width)))
+        let rawValue = range.lowerBound + percent * (range.upperBound - range.lowerBound)
+        
+        // Round to nearest step
+        let steps = round((rawValue - range.lowerBound) / step)
+        value = min(range.upperBound, max(range.lowerBound, range.lowerBound + steps * step))
+    }
+}
+
+// Custom tab button with icon and color
+struct TabButton: View {
+    let title: String
+    let icon: String
+    let color: Color
+    let isSelected: Bool
+    let action: () -> Void
+    
+    var body: some View {
+        Button(action: action) {
+            VStack(spacing: 4) {
+                Image(systemName: icon)
+                    .font(.system(size: 14, weight: isSelected ? .semibold : .regular))
+                    .foregroundColor(isSelected ? color : .secondary)
+                
+                Text(title)
+                    .font(.system(size: 11, weight: isSelected ? .semibold : .regular))
+                    .foregroundColor(isSelected ? color : .secondary)
+            }
+            .frame(minWidth: 70, maxWidth: .infinity)
+            .padding(.vertical, 10)
+            .contentShape(Rectangle())
+        }
+        .buttonStyle(PlainButtonStyle())
+        .background(
+            ZStack {
+                if isSelected {
+                    Rectangle()
+                        .fill(color.opacity(0.1))
+                        .frame(height: 3)
+                        .offset(y: 16)
+                }
+            }
+        )
+    }
+}
+
+// Extension for formatting network bandwidth
+extension Int {
+    func formatBandwidth() -> String {
+        let kb = Double(self) / 1024.0
+        
+        if kb < 1024 {
+            return String(format: "%.1f KB", kb)
+        } else {
+            let mb = kb / 1024.0
+            return String(format: "%.1f MB", mb)
+        }
+    }
+    
+    func formatBytes() -> String {
+        let kb = Double(self) / 1024.0
+        
+        if kb < 1024 {
+            return String(format: "%.0f KB", kb)
+        } else if kb < 1024 * 1024 {
+            let mb = kb / 1024.0
+            return String(format: "%.1f GB", mb)
+        } else {
+            let gb = kb / (1024.0 * 1024.0)
+            return String(format: "%.1f GB", gb)
+        }
     }
 } 

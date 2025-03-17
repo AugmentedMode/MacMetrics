@@ -1,7 +1,7 @@
 import SwiftUI
 
 // A design system inspired by Airbnb
-struct AppTheme {
+struct MacTheme {
     // MARK: - Colors
     
     struct Colors {
@@ -151,6 +151,9 @@ struct AppTheme {
         static let bouncy = Animation.spring(response: 0.5, dampingFraction: 0.5)
     }
 }
+
+// Alias for backward compatibility
+typealias AppTheme = MacTheme
 
 // MARK: - Helper Extensions
 
