@@ -1,0 +1,347 @@
+{
+  "builtTestProducts" : [
+
+  ],
+  "copyCommands" : {
+
+  },
+  "explicitTargetDependencyImportCheckingMode" : {
+    "none" : {
+
+    }
+  },
+  "generatedSourceTargetSet" : [
+
+  ],
+  "pluginDescriptions" : [
+
+  ],
+  "swiftCommands" : {
+    "C.MacMetrics-arm64-apple-macosx15.0-debug.module" : {
+      "executable" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "fileList" : "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/sources",
+      "importPath" : "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/augmentedmode/Desktop/side-projects/MacMetrics/ChartView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/augmentedmode/Desktop/side-projects/MacMetrics/ContentView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/augmentedmode/Desktop/side-projects/MacMetrics/MacMetricsApp.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/augmentedmode/Desktop/side-projects/MacMetrics/MetricCardView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/augmentedmode/Desktop/side-projects/MacMetrics/MetricGaugeView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/augmentedmode/Desktop/side-projects/MacMetrics/SystemMonitor.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/augmentedmode/Desktop/side-projects/MacMetrics/Utilities.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/sources"
+        }
+      ],
+      "isLibrary" : false,
+      "moduleName" : "MacMetrics",
+      "moduleOutputPath" : "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/Modules/MacMetrics.swiftmodule",
+      "objects" : [
+        "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/ChartView.swift.o",
+        "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/ContentView.swift.o",
+        "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/MacMetricsApp.swift.o",
+        "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/MetricCardView.swift.o",
+        "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/MetricGaugeView.swift.o",
+        "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/SystemMonitor.swift.o",
+        "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/Utilities.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx11.0",
+        "-enable-batch-mode",
+        "-index-store-path",
+        "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-j10",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-module-cache-path",
+        "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-Xfrontend",
+        "-entry-point-function-name",
+        "-Xfrontend",
+        "MacMetrics_main",
+        "-color-diagnostics",
+        "-swift-version",
+        "5",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g"
+      ],
+      "outputFileMapPath" : "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/ChartView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/ContentView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/MacMetricsApp.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/MetricCardView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/MetricGaugeView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/SystemMonitor.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/Utilities.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/Modules/MacMetrics.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/augmentedmode/Desktop/side-projects/MacMetrics/ChartView.swift",
+        "/Users/augmentedmode/Desktop/side-projects/MacMetrics/ContentView.swift",
+        "/Users/augmentedmode/Desktop/side-projects/MacMetrics/MacMetricsApp.swift",
+        "/Users/augmentedmode/Desktop/side-projects/MacMetrics/MetricCardView.swift",
+        "/Users/augmentedmode/Desktop/side-projects/MacMetrics/MetricGaugeView.swift",
+        "/Users/augmentedmode/Desktop/side-projects/MacMetrics/SystemMonitor.swift",
+        "/Users/augmentedmode/Desktop/side-projects/MacMetrics/Utilities.swift"
+      ],
+      "tempsPath" : "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build",
+      "wholeModuleOptimization" : false
+    }
+  },
+  "swiftFrontendCommands" : {
+
+  },
+  "swiftTargetScanArgs" : {
+    "MacMetrics" : [
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "-module-name",
+      "MacMetrics",
+      "-incremental",
+      "-c",
+      "/Users/augmentedmode/Desktop/side-projects/MacMetrics/ChartView.swift",
+      "/Users/augmentedmode/Desktop/side-projects/MacMetrics/ContentView.swift",
+      "/Users/augmentedmode/Desktop/side-projects/MacMetrics/MacMetricsApp.swift",
+      "/Users/augmentedmode/Desktop/side-projects/MacMetrics/MetricCardView.swift",
+      "/Users/augmentedmode/Desktop/side-projects/MacMetrics/MetricGaugeView.swift",
+      "/Users/augmentedmode/Desktop/side-projects/MacMetrics/SystemMonitor.swift",
+      "/Users/augmentedmode/Desktop/side-projects/MacMetrics/Utilities.swift",
+      "-I",
+      "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx11.0",
+      "-enable-batch-mode",
+      "-index-store-path",
+      "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-j10",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-module-cache-path",
+      "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-Xfrontend",
+      "-entry-point-function-name",
+      "-Xfrontend",
+      "MacMetrics_main",
+      "-color-diagnostics",
+      "-swift-version",
+      "5",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-I",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-L",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-driver-use-frontend-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    ]
+  },
+  "targetDependencyMap" : {
+    "MacMetrics" : [
+
+    ]
+  },
+  "testDiscoveryCommands" : {
+
+  },
+  "testEntryPointCommands" : {
+
+  },
+  "writeCommands" : {
+    "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics-entitlement.plist" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<entitlement-plist>"
+        },
+        {
+          "kind" : "virtual",
+          "name" : "<com.apple.security.get-task-allow>"
+        }
+      ],
+      "outputFilePath" : "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics-entitlement.plist"
+    },
+    "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/augmentedmode/Desktop/side-projects/MacMetrics/ChartView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/augmentedmode/Desktop/side-projects/MacMetrics/ContentView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/augmentedmode/Desktop/side-projects/MacMetrics/MacMetricsApp.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/augmentedmode/Desktop/side-projects/MacMetrics/MetricCardView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/augmentedmode/Desktop/side-projects/MacMetrics/MetricGaugeView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/augmentedmode/Desktop/side-projects/MacMetrics/SystemMonitor.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/augmentedmode/Desktop/side-projects/MacMetrics/Utilities.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/sources"
+    },
+    "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.product/Objects.LinkFileList" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<link-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/ChartView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/ContentView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/MacMetricsApp.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/MetricCardView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/MetricGaugeView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/SystemMonitor.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.build/Utilities.swift.o"
+        }
+      ],
+      "outputFilePath" : "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/MacMetrics.product/Objects.LinkFileList"
+    },
+    "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt" : {
+      "alwaysOutOfDate" : true,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<swift-get-version>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+        }
+      ],
+      "outputFilePath" : "/Users/augmentedmode/Desktop/side-projects/MacMetrics/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+    }
+  }
+}
